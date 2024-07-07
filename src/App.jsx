@@ -29,6 +29,7 @@ function App() {
         !formData.refereeEmail
       ) {
         setErrorMessage("Please fill in all fields.");
+        setLoader(false);
         return;
       }
       // Email validation using a simple regex pattern
@@ -38,6 +39,7 @@ function App() {
         !emailRegex.test(formData.refereeEmail)
       ) {
         setErrorMessage("Please enter valid email addresses.");
+        setLoader(false);
         return;
       }
 
@@ -62,6 +64,7 @@ function App() {
         setShowModal(false);
       } else {
         setErrorMessage(response.data.error || "An error occurred.");
+        setLoader(false);
       }
     } catch (error) {
       console.error("Error submitting referral:", error);
