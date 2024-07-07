@@ -68,6 +68,7 @@ function App() {
       }
     } catch (error) {
       console.error("Error submitting referral:", error);
+      setLoader(false);
       setErrorMessage("An error occurred. Please try again.");
     }
   };
